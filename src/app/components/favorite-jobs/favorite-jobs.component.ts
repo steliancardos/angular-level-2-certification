@@ -1,13 +1,9 @@
 import { Component } from '@angular/core';
 import { NgFor } from '@angular/common';
 
-import { StateService } from '../../services/state/state.service';
-import { JobsService } from '../../services/jobs/jobs.service';
-import { JobComponent } from '../job/job.component';
-
 import { Job } from '../../models/jobs';
-
-import { map } from 'rxjs';
+import { JobComponent } from '../job/job.component';
+import { FavoriteJobsService } from '../../services/favorite-jobs/favorite-jobs.service';
 
 @Component({
   selector: 'app-favorite-jobs',
@@ -17,20 +13,17 @@ import { map } from 'rxjs';
   styleUrl: './favorite-jobs.component.css',
 })
 export class FavoriteJobsComponent {
+  /**
+   * Jobs marked as favorite
+   */
   jobs: Array<Job> = [];
 
-  constructor(
-    private sateService: StateService,
-    private jobService: JobsService
-  ) {}
+  constructor(private favoriteJobsService: FavoriteJobsService) {}
 
   ngOnInit() {
-    let favoriteJobs = this.sateService.getFavoriteJobs();
-    this.jobService
-      .getJobs()
-      .pipe(
-        map((item) => item.filter((f) => favoriteJobs.indexOf(f.id, 0) > -1))
-      )
+    //Get jobs marked as favorite
+    this.favoriteJobsService
+      .getFavoriteJobs()
       .subscribe((data) => (this.jobs = data));
   }
 }
