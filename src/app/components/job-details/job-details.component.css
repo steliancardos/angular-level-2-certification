@@ -1,14 +1,6 @@
 .img-btn-back {
   height: 10px;
 }
-.btn-back {
-  margin-left: 24%;
-  height: 3em;
-  width: 7em;
-  border: none;
-  background-color: darkgray;
-  cursor: pointer;
-}
 .job-details-wrapper {
   display: grid;
   grid-template-columns: 100px auto;
