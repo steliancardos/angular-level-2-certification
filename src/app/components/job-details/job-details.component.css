@@ -1,0 +1,35 @@
+.img-btn-back {
+  height: 10px;
+}
+.btn-back {
+  margin-left: 24%;
+  height: 3em;
+  width: 7em;
+  border: none;
+  background-color: darkgray;
+  cursor: pointer;
+}
+.job-details-wrapper {
+  display: grid;
+  grid-template-columns: 100px auto;
+  grid-template-rows: subgrid;
+  place-items: center;
+  justify-items: center;
+  width: 50vw;
+  justify-items: first baseline;
+  margin-left: 24%;
+  margin-top: 10px;
+}
+.set-full-width {
+  grid-column: span 2;
+}
+.job-description {
+  font-size: 13px;
+  border: 1px solid #597eac;
+  width: fit-content;
+  color: white;
+  background: #597eac;
+  border-radius: 10px;
+  padding: 0 1rem;
+  margin-bottom: 2px;
+}

@@ -1,1 +1,3 @@
-<p>favorite-jobs works!</p>
+@for (item of jobs; track item.id) {
+    <app-job [job]='item' [showFavorite]="false"></app-job>
+}

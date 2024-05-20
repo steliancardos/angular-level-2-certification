@@ -1,18 +1,34 @@
-.logo {
-    height: 2em;;
-}
-
-.job-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    background-color: #2196F3;
-    padding: 10px;
+.job-wrapper {
+  display: grid;
+  place-items: center;
 }
 
 .job-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
+  background-color: #ccc;
+  color: #444;
+  cursor: pointer;
+}
+
+.d {
+  display: grid;
+  grid-template-columns: 100px auto 100px;
+  grid-template-rows: subgrid;
+  place-items: center;
+  width: 50vw;
+  justify-items: first baseline;
+}
+
+.e {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.f {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.g {
+  grid-row: 1;
+  grid-column: 3;
 }

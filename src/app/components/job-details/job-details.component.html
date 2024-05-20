@@ -1,0 +1,17 @@
+<button class="btn-back" (click)="goBack()">
+    <img src="/assets/home-icon.svg" class="img-btn-back"> Back
+</button>
+@if(job) {
+    <div class="job-details-wrapper">
+        <img class='logo' src="{{job.companyLogo}}">
+        <h2>{{job.companyName}} - {{job.title}}
+            <div class="job-description" [innerHTML]="job.types"></div>
+            <div class="job-description" [innerHTML]="job.industries"></div>
+        </h2>
+        <b class="set-full-width">Publish date: {{ job.publishDate | date: 'dd/MM/yyyy' }}</b>
+        <b class="set-full-width">Location: {{ job.location }}</b>
+        <b class="set-full-width">Reference: {{ job.reference }}</b>
+        <b class="set-full-width">Description:</b>
+        <div class="set-full-width" [innerHTML]="job.description"></div>
+    </div>
+}

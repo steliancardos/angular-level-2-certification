@@ -1,0 +1,29 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  margin: 0 23.8vw 0;
+}
+
+.grid-item {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+
+  color: #3a4252;
+  text-decoration: none;
+}
+
+.active-link {
+  background-color: #3a4252;
+  color: white;
+}
+
+.center-title {
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+}

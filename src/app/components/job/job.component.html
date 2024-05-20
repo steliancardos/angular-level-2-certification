@@ -1,5 +1,16 @@
-<img class='logo' src="{{job.companyLogo}}">
-<p>{{job.title}}</p>\
-@if (showFavorite) {
-    <div>star here</div>
-}
+<div class="job-wrapper">
+    <div class="job-item d">
+        <div class="job-item e">
+            <img class='logo' src="{{job.companyLogo}}">
+        </div>
+      <div class="job-item f" (click)="jobClicked(job.id)">
+        <h2>{{job.title}}</h2>
+        <p>Company: {{job.companyName}} Reference: {{job.reference}}</p>
+      </div>
+      @if (showFavorite) {
+        <div class="job-item g" (click)="addToFavorites(job.id)">
+            <span class="normal-star" [className]="addedToFavorites ? 'favorite-star':'normal-star'" id="star-{{job.id}}"></span>
+        </div>
+        }
+    </div>
+</div>
