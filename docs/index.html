@@ -12,4 +12,12 @@
 <body>
   <app-root></app-root>
 <script src="polyfills-RT5I6R6G.js" type="module"></script><script src="main-STTSR3WO.js" type="module"></script></body>
+  <script>
+  // register ServiceWorker, remember to use absolute path!
+  if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('/{repository}/mockServiceWorker.js', {scope: '/{repository}/'})
+  }
+  
+  // --- Application code here ---
+  </script>
 </html>
