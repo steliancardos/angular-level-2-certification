@@ -28,6 +28,7 @@ export class JobDetailsComponent {
     });
   }
 
+  //Go back method
   goBack(): void {
     this.router.navigate(['']);
   }
