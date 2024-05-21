@@ -13,7 +13,8 @@ import { JobComponent } from '../job/job.component';
 export class JobsComponent {
   jobs: Array<Job> = [];
 
-  constructor(private jobsService: JobsService) {
+  constructor(private jobsService: JobsService) {}
+  ngOnInit() {
     this.jobsService.getJobs().subscribe((data) => (this.jobs = data));
   }
 }

@@ -10,10 +10,10 @@ export class JobService {
   constructor(private http: HttpClient) {}
 
   /**
-   *
-   * @returns A list of available jobs
+   *  Get the job by id
+   * @returns A Job object
    */
-  getJobs(jobId: number): Observable<Job> {
+  getJob(jobId: number): Observable<Job> {
     return this.http.get<Job>('/jobs/' + jobId);
   }
 }

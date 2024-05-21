@@ -1,23 +1,31 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { ErrorComponent } from './error.component';
+import { Router } from '@angular/router';
 
 describe('ErrorComponent', () => {
   let component: ErrorComponent;
   let fixture: ComponentFixture<ErrorComponent>;
+  let router: jasmine.SpyObj<Router>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ErrorComponent]
-    })
-    .compileComponents();
-    
+  beforeEach(() => {
+    const routerSpy = jasmine.createSpyObj('Router', ['navigate']);
+
+    TestBed.configureTestingModule({
+      imports: [ErrorComponent],
+      providers: [{ provide: Router, useValue: routerSpy }],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(ErrorComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    router = TestBed.inject(Router) as jasmine.SpyObj<Router>;
   });
 
-  it('should create', () => {
+  it('should create the component', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should navigate to the root route', () => {
+    component.goBack();
+    expect(router.navigate).toHaveBeenCalledWith(['']);
   });
 });

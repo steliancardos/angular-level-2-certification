@@ -23,7 +23,7 @@ export class JobDetailsComponent {
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
       this.jobService
-        .getJobs(Number(params.get('id')))
+        .getJob(Number(params.get('id')))
         .subscribe((data) => (this.job = data));
     });
   }
