@@ -2,9 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { JobDetailsComponent } from './job-details.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ActivatedRoute, Router } from '@angular/router';
-import { of } from 'rxjs';
 import { JobService } from '../../services/job/job.service';
-import { Job } from '../../models/jobs';
 
 describe('JobDetailsComponent', () => {
   let component: JobDetailsComponent;
