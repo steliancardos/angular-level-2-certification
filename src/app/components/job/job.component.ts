@@ -12,7 +12,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './job.component.css',
 })
 export class JobComponent {
+  //The job to be displayed
   @Input('job') job!: Job;
+  //show favorite button
   @Input('showFavorite') showFavorite!: boolean;
   addedToFavorites: boolean = false;
   constructor(

@@ -1,15 +1,15 @@
-.job-wrapper {
+/*
+Move the main contaniner to center page using grid with center
+*/
+.job-container {
   display: grid;
   place-items: center;
 }
 
-.job-item {
-  background-color: #ccc;
-  color: #444;
-  cursor: pointer;
-}
-
-.d {
+/*
+Create a grid to show each job item
+*/
+.job-wrapper {
   display: grid;
   grid-template-columns: 100px auto 100px;
   grid-template-rows: subgrid;
@@ -18,17 +18,26 @@
   justify-items: first baseline;
 }
 
-.e {
+/*
+Job item
+*/
+.job-item {
+  background-color: #ccc;
+  color: #444;
+  cursor: pointer;
+}
+
+.first-column {
   grid-row: 1;
   grid-column: 1;
 }
 
-.f {
+.second-column {
   grid-row: 1;
   grid-column: 2;
 }
 
-.g {
+.third-column {
   grid-row: 1;
   grid-column: 3;
 }

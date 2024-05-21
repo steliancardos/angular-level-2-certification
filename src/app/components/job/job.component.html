@@ -1,14 +1,14 @@
-<div class="job-wrapper">
-    <div class="job-item d">
-        <div class="job-item e">
+<div class="job-container">
+    <div class="job-wrapper">
+        <div class="job-item first-column">
             <img class='logo' src="{{job.companyLogo}}">
         </div>
-      <div class="job-item f" (click)="jobClicked(job.id)">
+      <div class="job-item second-column" (click)="jobClicked(job.id)">
         <h3>{{job.title}}</h3>
         <p>Company: {{job.companyName}} Reference: {{job.reference}}</p>
       </div>
       @if (showFavorite) {
-        <div class="job-item g" (click)="addToFavorites(job.id)">
+        <div class="job-item third-column" (click)="addToFavorites(job.id)">
             <span class="normal-star" [className]="addedToFavorites ? 'favorite-star':'normal-star'" id="star-{{job.id}}"></span>
         </div>
         }
