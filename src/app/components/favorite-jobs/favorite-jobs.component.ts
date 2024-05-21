@@ -18,12 +18,18 @@ export class FavoriteJobsComponent {
    */
   jobs: Array<Job> = Array<Job>();
 
+  /**
+   * Show no favorite jobs available text
+   */
+  showNoFavoriteText: boolean = false;
+
   constructor(private favoriteJobsService: FavoriteJobsService) {}
 
   ngOnInit() {
     //Get jobs marked as favorite
-    this.favoriteJobsService
-      .getFavoriteJobs()
-      .subscribe((data) => (this.jobs = data));
+    this.favoriteJobsService.getFavoriteJobs().subscribe((data) => {
+      this.jobs = data;
+      this.showNoFavoriteText = this.jobs.length <= 0;
+    });
   }
 }

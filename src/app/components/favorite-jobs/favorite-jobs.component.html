@@ -1,3 +1,7 @@
-@for (item of jobs; track item.id) {
-    <app-job [job]='item' [showFavorite]="false"></app-job>
+@if(!showNoFavoriteText){
+    @for (item of jobs; track item.id) {
+        <app-job [job]='item' [showFavorite]="false"></app-job>
+    }
+}@else{
+    <h1 class="no-jobs-text">There are no favorites</h1>
 }
