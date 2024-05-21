@@ -11,10 +11,11 @@ import { JobComponent } from '../job/job.component';
   styleUrl: './jobs.component.css',
 })
 export class JobsComponent {
-  jobs: Array<Job> = [];
+  jobs: Array<Job> = Array<Job>();
 
   constructor(private jobsService: JobsService) {}
   ngOnInit() {
+    //get list of jobs
     this.jobsService.getJobs().subscribe((data) => (this.jobs = data));
   }
 }

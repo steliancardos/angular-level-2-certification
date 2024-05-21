@@ -13,10 +13,14 @@ import { CommonModule } from '@angular/common';
 })
 export class JobComponent {
   //The job to be displayed
+
   @Input('job') job!: Job;
+
   //show favorite button
-  @Input('showFavorite') showFavorite!: boolean;
+  @Input('showFavorite') showFavorite: boolean = false;
+
   addedToFavorites: boolean = false;
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -27,12 +31,22 @@ export class JobComponent {
     this.addedToFavorites = this.sateService.isAddedToFavorites(this.job.id);
   }
 
-  jobClicked(jobID: number) {
+  /**
+   * Redirect to job details component
+   * @param jobID Id of the job
+   */
+  jobClicked(jobID: number): void {
     this.router.navigate(['/jobs', jobID], { relativeTo: this.route });
   }
 
-  addToFavorites(jobId: number) {
+  /**
+   * Add a job to favorite
+   * @param jobId Id of the job
+   */
+  addToFavorites(jobId: number): void {
+    //Add job to favorites
     this.sateService.addJobToFavorites(jobId);
+    //Mark as added to favorites
     this.addedToFavorites = this.sateService.isAddedToFavorites(this.job.id);
   }
 }

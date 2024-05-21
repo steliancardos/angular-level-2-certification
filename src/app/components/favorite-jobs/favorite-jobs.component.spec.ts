@@ -8,7 +8,6 @@ import { NgForOf } from '@angular/common';
 
 describe('FavoriteJobsComponent', () => {
   let component: FavoriteJobsComponent;
-  let fixture: any;
   let favoriteJobsService: jasmine.SpyObj<FavoriteJobsService>;
 
   beforeEach(async () => {
@@ -27,7 +26,7 @@ describe('FavoriteJobsComponent', () => {
       ],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(FavoriteJobsComponent);
+    const fixture = TestBed.createComponent(FavoriteJobsComponent);
     component = fixture.componentInstance;
     favoriteJobsService = TestBed.inject(
       FavoriteJobsService

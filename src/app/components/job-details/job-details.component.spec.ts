@@ -6,7 +6,6 @@ import { JobService } from '../../services/job/job.service';
 
 describe('JobDetailsComponent', () => {
   let component: JobDetailsComponent;
-  let fixture: ComponentFixture<JobDetailsComponent>;
   let router: Router;
   let route: ActivatedRoute;
   let jobService: jasmine.SpyObj<JobService>;
@@ -29,7 +28,7 @@ describe('JobDetailsComponent', () => {
       ],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(JobDetailsComponent);
+    const fixture = TestBed.createComponent(JobDetailsComponent);
     component = fixture.componentInstance;
     router = TestBed.inject(Router);
     route = TestBed.inject(ActivatedRoute);

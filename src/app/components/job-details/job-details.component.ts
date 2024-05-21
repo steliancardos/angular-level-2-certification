@@ -21,6 +21,7 @@ export class JobDetailsComponent {
   ) {}
 
   ngOnInit() {
+    //Get job ising the job id from the route
     this.route.paramMap.subscribe((params) => {
       this.jobService
         .getJob(Number(params.get('id')))

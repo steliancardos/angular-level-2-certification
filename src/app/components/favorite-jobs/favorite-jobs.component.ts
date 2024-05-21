@@ -16,7 +16,7 @@ export class FavoriteJobsComponent {
   /**
    * Jobs marked as favorite
    */
-  jobs: Array<Job> = [];
+  jobs: Array<Job> = Array<Job>();
 
   constructor(private favoriteJobsService: FavoriteJobsService) {}
 
