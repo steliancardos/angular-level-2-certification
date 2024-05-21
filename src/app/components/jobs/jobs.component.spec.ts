@@ -3,7 +3,7 @@ import { JobsComponent } from './jobs.component';
 import { JobsService } from '../../services/jobs/jobs.service';
 import { of } from 'rxjs';
 import { Job } from '../../models/jobs';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 
 describe('JobsComponent', () => {
   let component: JobsComponent;
@@ -15,7 +15,10 @@ describe('JobsComponent', () => {
 
     TestBed.configureTestingModule({
       imports: [JobsComponent, RouterModule.forRoot([])],
-      providers: [{ provide: JobsService, useValue: jobsServiceSpy }],
+      providers: [
+        { provide: JobsService, useValue: jobsServiceSpy },
+        { provide: ActivatedRoute, useValue: {} },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(JobsComponent);

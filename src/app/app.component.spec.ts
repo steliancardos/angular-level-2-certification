@@ -1,43 +1,28 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
+import { RouterOutlet } from '@angular/router';
 import { AppComponent } from './app.component';
-import { RouterTestingModule } from '@angular/router/testing';
 import { MenuComponent } from './components/menu/menu.component';
+import { ActivatedRoute } from '@angular/router';
 
 describe('AppComponent', () => {
   let component: AppComponent;
-  let fixture: any;
+  let fixture: ComponentFixture<AppComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent, RouterTestingModule, MenuComponent],
+      imports: [AppComponent, MenuComponent, RouterOutlet],
       declarations: [],
+      providers: [{ provide: ActivatedRoute, useValue: {} }],
     }).compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('should create the app', () => {
     expect(component).toBeTruthy();
   });
 });
-// it('should create the app', () => {
-//   const fixture = TestBed.createComponent(AppComponent);
-//   const app = fixture.componentInstance;
-//   expect(app).toBeTruthy();
-// });
-
-// it(`should have the 'ng-job-search' title`, () => {
-//   const fixture = TestBed.createComponent(AppComponent);
-//   const app = fixture.componentInstance;
-//   expect(app.title).toEqual('ng-job-search');
-// });
-
-// it('should render title', () => {
-//   const fixture = TestBed.createComponent(AppComponent);
-//   fixture.detectChanges();
-//   const compiled = fixture.nativeElement as HTMLElement;
-//   expect(compiled.querySelector('h1')?.textContent).toContain(
-//     'Hello, ng-job-search'
-//   );
-// });
